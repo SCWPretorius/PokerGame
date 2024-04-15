@@ -1,11 +1,8 @@
-package com.pokergame.game;
+package com.pokergame.game.five_card_draw;
 
 import com.pokergame.model.Card;
 import com.pokergame.model.Hand;
 import com.pokergame.model.Tuple;
-
-import java.util.Arrays;
-import java.util.HashSet;
 
 public class PokerHandAnalyzer {
 

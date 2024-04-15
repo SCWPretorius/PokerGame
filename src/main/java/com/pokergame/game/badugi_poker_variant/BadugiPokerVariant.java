@@ -1,6 +1,6 @@
-package com.pokergame.game;
+package com.pokergame.game.badugi_poker_variant;
 
-import com.pokergame.model.Hand;
+import com.pokergame.game.PokerVariant;
 import com.pokergame.model.Player;
 
 import java.util.List;
@@ -28,17 +28,5 @@ public class BadugiPokerVariant implements PokerVariant {
     }
 
     @Override
-    public boolean isHandComplete(Hand hand) {
-        return false;
-    }
-
-    @Override
-    public void evaluateHands(List<Player> players) {
-
-    }
-
-    @Override
-    public String getHandRankingDescription(Hand hand) {
-        return "";
-    }
+    public void evaluateHands(List<Player> players) {}
 }
