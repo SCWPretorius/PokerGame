@@ -16,4 +16,28 @@ public class Card {
     public String getSuit() {
         return suit;
     }
+
+    @Override
+    public String toString() {
+        return rank + suit;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Card card = (Card) obj;
+        return rank.equals(card.rank) && suit.equals(card.suit);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = rank.hashCode();
+        result = 31 * result + suit.hashCode();
+        return result;
+    }
 }

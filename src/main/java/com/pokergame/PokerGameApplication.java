@@ -7,8 +7,10 @@ import com.pokergame.game.PokerVariant;
 import com.pokergame.model.Player;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class PokerGameApplication {
+    private static final Logger LOGGER = Logger.getLogger(PokerGameApplication.class.getName());
 
     public static void main(String[] args) {
 
@@ -28,8 +30,6 @@ public class PokerGameApplication {
         for (int i = 1; i <= numPlayers; i++) {
             System.out.print("Enter the name of player " + i + ": ");
             String playerName = scanner.nextLine();
-            System.out.print("Enter the initial chips for player " + i + ": ");
-            scanner.nextLine(); // Consume the newline character
 
             Player player = new Player(playerName);
             game.addPlayer(player);
@@ -38,13 +38,8 @@ public class PokerGameApplication {
         // Start the game
         game.startGame();
 
-        // Play rounds until the game is over
-        while (!game.isOver()) {
-            game.playRound();
-        }
-
-        // Determine the winner and distribute the pot
-        game.determineWinner();
+        // Determine the winner
+        System.out.println(game.determineWinner());
 
         // End the game
         game.endGame();
@@ -62,16 +57,15 @@ public class PokerGameApplication {
         int choice = scanner.nextInt();
         scanner.nextLine(); // Consume the newline character
 
-        switch (choice) {
-            case 1:
-                return  new FiveCardsVariant();
-            case 2:
-                return new BadugiPokerVariant();
+        return switch (choice) {
+            case 1 -> new FiveCardsVariant();
+            case 2 -> new BadugiPokerVariant();
             // Add more cases for other poker variants
-            default:
+            default -> {
                 System.out.println("Invalid choice. Defaulting to Five Cards.");
-                return new FiveCardsVariant();
-        }
+                yield new FiveCardsVariant();
+            }
+        };
     }
 
     private static int getNumPlayers(Scanner scanner, PokerVariant pokerVariant) {

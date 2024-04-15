@@ -1,6 +1,9 @@
 package com.pokergame.game;
 
 import com.pokergame.model.Hand;
+import com.pokergame.model.Player;
+
+import java.util.List;
 
 public class BadugiPokerVariant implements PokerVariant {
 
@@ -30,8 +33,8 @@ public class BadugiPokerVariant implements PokerVariant {
     }
 
     @Override
-    public int compareHands(Hand hand1, Hand hand2) {
-        return 0;
+    public void evaluateHands(List<Player> players) {
+
     }
 
     @Override

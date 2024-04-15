@@ -1,5 +1,8 @@
 package com.pokergame.model;
 
+import com.pokergame.shuffling.BasicShuffleAlgorithm;
+import com.pokergame.shuffling.ShuffleAlgorithm;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +15,8 @@ public class Deck {
     }
 
     private void initializeDeck() {
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+        String[] suits = {"H", "D", "C", "S"};
 
         for (String suit : suits) {
             for (String rank : ranks) {
@@ -25,12 +28,19 @@ public class Deck {
 
     public Card dealCard() {
         if (!cards.isEmpty()) {
-            return cards.remove(cards.size() - 1);
+            return cards.removeLast();
         }
         return null;
     }
 
     public int getSize() {
         return cards.size();
+    }
+
+    public void shuffle() {
+        // Change shuffle algorithm here
+        System.out.println("Shuffling ... Shuffling ... Shuffling ...");
+        ShuffleAlgorithm shuffleAlgorithm = new BasicShuffleAlgorithm();
+        shuffleAlgorithm.shuffle(cards);
     }
 }
