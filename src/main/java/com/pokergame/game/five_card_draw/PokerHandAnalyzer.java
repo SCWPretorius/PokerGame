@@ -4,6 +4,10 @@ import com.pokergame.model.Card;
 import com.pokergame.model.Hand;
 import com.pokergame.model.Tuple;
 
+/***
+ * Class used to analyze the poker hand and return the hand strength
+ * Algorithm was found on https://rosettacode.org/wiki/Poker_hand_analyser modifications was made
+ */
 public class PokerHandAnalyzer {
 
     final static String FACES = "AKQJT98765432";
