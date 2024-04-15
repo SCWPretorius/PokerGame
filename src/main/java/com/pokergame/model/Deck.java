@@ -28,7 +28,7 @@ public class Deck {
 
     public Card dealCard() {
         if (!cards.isEmpty()) {
-            return cards.removeLast();
+            return cards.remove(cards.size() -1);
         }
         return null;
     }
