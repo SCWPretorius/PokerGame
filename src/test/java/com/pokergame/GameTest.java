@@ -1,8 +1,7 @@
 package com.pokergame;
 
-import com.pokergame.game.FiveCardsVariant;
+import com.pokergame.game.five_card_draw.FiveCardsVariant;
 import com.pokergame.game.Game;
-import com.pokergame.game.PokerVariant;
 import com.pokergame.model.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

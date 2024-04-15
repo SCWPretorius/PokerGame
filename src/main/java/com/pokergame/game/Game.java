@@ -36,16 +36,18 @@ public class Game {
         pokerVariant.evaluateHands(players);
 
         String winner = "";
+        String ranking = "";
         String winningHand = "";
         int score = 0;
         for (Player player : players) {
             if (player.getScore().y > score) {
                 winner = player.getName();
                 score = player.getScore().y;
-                winningHand = player.getScore().x;
+                ranking = player.getScore().x;
+                winningHand = player.getHand().toString();
             }
         }
-        return winner + " wins with " + winningHand;
+        return winner + " wins with " + ranking + "\n" + winningHand;
     }
 
     public void endGame() {

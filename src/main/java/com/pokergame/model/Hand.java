@@ -36,26 +36,12 @@ public class Hand {
         for (Card card : cards) {
             sb.append(card).append(" ");
         }
-        return sb.toString().trim();
-    }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder stringBuilder = new StringBuilder();
-//        stringBuilder.append("Your hand: ");
-//        if (getSize() > 0) {
-//            for (Card card : cards) {
-//                // change card letters to corresponding pips
-//                stringBuilder.append(card.getSuit().replaceAll("C", "♣")
-//                        .replaceAll("D", "♦")
-//                        .replaceAll("H", "♥")
-//                        .replaceAll("S", "♠")
-//                        .replaceAll("T", "10")).append(" ");
-//            }
-//        } else {
-//            stringBuilder.append("Not enough com.poker.cards");
-//        }
-//        stringBuilder.append("\nYou have: ").append(name);
-//        return stringBuilder.toString();
-//    }
+        return sb.toString().trim()
+                .replaceAll("C", "♣")
+                .replaceAll("D", "♦")
+                .replaceAll("H", "♥")
+                .replaceAll("S", "♠")
+                .replaceAll("T", "10");
+    }
 }

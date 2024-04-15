@@ -1,7 +1,7 @@
 package com.pokergame;
 
-import com.pokergame.game.BadugiPokerVariant;
-import com.pokergame.game.FiveCardsVariant;
+import com.pokergame.game.badugi_poker_variant.BadugiPokerVariant;
+import com.pokergame.game.five_card_draw.FiveCardsVariant;
 import com.pokergame.game.Game;
 import com.pokergame.game.PokerVariant;
 import com.pokergame.model.Player;

@@ -1,5 +1,6 @@
-package com.pokergame.game;
+package com.pokergame.game.five_card_draw;
 
+import com.pokergame.game.PokerVariant;
 import com.pokergame.model.Hand;
 import com.pokergame.model.Player;
 
@@ -27,20 +28,10 @@ public class FiveCardsVariant implements PokerVariant {
     }
 
     @Override
-    public boolean isHandComplete(Hand hand) {
-        return false;
-    }
-
-    @Override
     public void evaluateHands(List<Player> players) {
         for (Player player : players) {
             Hand hand = player.getHand();
             player.setScore(PokerHandAnalyzer.analyzeHand(hand));
         }
-    }
-
-    @Override
-    public String getHandRankingDescription(Hand hand) {
-        return "";
     }
 }
