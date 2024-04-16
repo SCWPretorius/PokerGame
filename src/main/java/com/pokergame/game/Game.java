@@ -61,7 +61,7 @@ public class Game {
         String winner = "";
         String ranking = "";
         String winningHand = "";
-        int score = 0;
+        int score = -1;
         for (Player player : players) {
             if (player.getScore().y > score) {
                 winner = player.getName();
