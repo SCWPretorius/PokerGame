@@ -56,7 +56,11 @@ public class Game {
      * @return a String representing the winner and their winning hand.
      */
     public String determineWinner() {
-        pokerVariant.evaluateHands(players);
+        try {
+            pokerVariant.evaluateHands(players);
+        } catch (Exception e) {
+            return "An error occurred while evaluating hands: " + e.getMessage();
+        }
 
         String winner = "";
         String ranking = "";
