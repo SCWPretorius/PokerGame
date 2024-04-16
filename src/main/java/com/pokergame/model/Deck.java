@@ -24,7 +24,7 @@ public class Deck {
      * Initializes the deck with a standard set of 52 playing cards.
      */
     private void initializeDeck() {
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"};
         String[] suits = {"H", "D", "C", "S"};
 
         for (String suit : suits) {
