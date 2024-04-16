@@ -67,6 +67,9 @@ public class Game {
         String winningHand = "";
         int score = -1;
         for (Player player : players) {
+            if (player.getScore().y == -1) {
+                return player.getName() + " has an invalid hand.";
+            }
             if (player.getScore().y > score) {
                 winner = player.getName();
                 score = player.getScore().y;
