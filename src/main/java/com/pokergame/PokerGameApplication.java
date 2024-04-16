@@ -7,10 +7,8 @@ import com.pokergame.game.PokerVariant;
 import com.pokergame.model.Player;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class PokerGameApplication {
-    private static final Logger LOGGER = Logger.getLogger(PokerGameApplication.class.getName());
 
     public static void main(String[] args) {
 
